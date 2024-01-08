@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>izracunPlace</title>
+</head>
+
+<body>
+    <div id="content">
+        <div id="header">
+            <h1> Izračun plaće</h1>
+        </div>
+        <div id="izracun"></div>
+       
+        <div class="unos">
+            <label for="koeficijent">Koeficijent</label>
+            <input id="koeficijent" type="number" placeholder="x.y">
+        </div>
+        <div class="unos">
+            <label for="normaSati">Norma sati</label>
+            <input id="normaSati" type="number">
+        </div>
+    
+        <div class="unos">
+            <label for="dodatakStazUKuci">Dodatak na staž u kući</label>
+            <input id="dodatakStazUKuci" type="number" placeholder="%">
+        </div>
+        <div class="unos">
+            <label for="dodatakStaz">Dodatak na staž</label>
+            <input id="dodatakStaz" type="number" placeholder="%">
+        </div>
+        <div class="unos">
+            <label for="prirez">Porez na dohodak </label>
+            <input id="prirez"   type="number">
+        </div>
+        <div class="unos">
+            <label for="brojDjece">Broj djece </label>
+            <input id="brojDjece" type="number" >
+        </div>
+        <hr>
+     
+        
+        <div class="unos">
+            <label for="satiSubota">Sati-subota </label>
+            <input id="satiSubota" type="number">
+        </div>
+        <div class="unos">
+            <label for="satiNedjelja">Sati-nedjelja </label>
+            <input id="satiNedjelja" type="number">
+        </div>
+        <div class="unos">
+            <label for="satiNoc">Sati-noć </label>
+            <input id="satiNoc" type="number">
+        </div>
+        <div class="unos">
+            <label for="satiPraznik">Sati-praznik </label>
+            <input id="satiPraznik" type="number" >
+        </div>
+        <div class="unos">
+            <label for="satiDvokratno">Sati-dvokratno </label>
+            <input id="satiDvokratno" type="number" >
+        </div>
+        <div class="unos">
+            <label for="satiPopodne">Sati-popodne</label>
+            <input id="satiPopodne" type="number">
+        </div>
+        <div class="unos">
+            <label for="satiPVU">Sati-PVU </label>
+            <input id="satiPVU" type="number">
+        </div>
+        <div class="unos">
+            <label for="satiAktiva">Sati-aktivno dežurstvo </label>
+            <input id="satiAktiva" type="number">
+        </div>
+        
+        <div class="unos">
+            <label for="satiPrekovremeni">Sati-prekovremeni </label>
+            <input id="satiPrekovremeni" type="number">
+        </div>
+        <div class="unos">
+            <label for="satiPasiva">Sati-pasivno dežurstvo </label>
+            <input id="satiPasiva" type="number">
+        </div>
+        <div class="unos">
+            <label for="satiVisina">Sati-rad na visini </label>
+            <input id="satiVisina" type="number">
+        </div>
+        <div class="unos">
+            <label for="satiUtovar">Sati-utovar/buka </label>
+            <input id="satiUtovar" type="number">
+        </div>
+        <div class="unos">
+            <label for="satiRat">Sati-nepogode/rat </label>
+            <input id="satiRat" type="number">
+        </div>
+        <div class="unos">
+            <label for="brojVoznji">Broj vožnji </label>
+            <input id="brojVoznji" type="number">
+        </div>
+     
+        <div class="unos">
+            <label for="stimulacijaPostotak">Stimulacija </label>
+            <input id="stimulacijaPostotak" type="number" placeholder="%">
+        </div>
+        <div class="unos">
+            <button id="gumbZaIzracun" type="button" onclick="calculate()">
+                IZRACUNAJ
+            </button>
+        </div>
+        <hr>
+        <div id="prikazIzracuna">
+            <p> Bruto sat: <span id="brutoSat"></span></p>
+            <p> Bruto ukupno: <span id="brutoUkupno"></span></p>
+            <hr>
+            <p> Zakonski propisana plaća: <span id="netoUkupno"></span></p>
+        </div>
+    </div>
+    <script src="jscript.js"> </script>
+</body>
+</html>
