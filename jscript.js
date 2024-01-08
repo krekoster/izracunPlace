@@ -8,7 +8,8 @@ function calculate() {
     const osobniOdbitak = 560;
     const prosjecnaBrutoPlacaKuce = 1566.3;
     const koeficijent = document.getElementById("koeficijent").value;
-    const stopaPrireza = document.getElementById("prirez").value;
+    const porez2 = document.getElementById("porezNaDohodak").value / 1;
+    
     const brojDjece = document.getElementById("brojDjece").value / 1;
 
 
@@ -76,17 +77,16 @@ function calculate() {
     const mirovinskiDrugi = brutoTotal * 0.05;
     const dohodak = brutoTotal - mirovinskiPrvi - mirovinskiDrugi;
     const poreznaOsnovica = dohodak - poreznaOlaksica - ukupniOsobniOdbitak;
-    let porez = poreznaOsnovica * 0.2;
-    let prirez = porez * stopaPrireza / 100;
+    const porez = poreznaOsnovica * porez2 / 100;
+    
 
     if (poreznaOsnovica < 0) {
         porez = 0;
-        prirez = 0;
     }
 
     // ---- izracun neto
 
-    const netoTotal = dohodak - porez - prirez;
+    const netoTotal = dohodak - porez;
 
     // ispis
 
@@ -96,9 +96,9 @@ function calculate() {
     document.getElementById("netoUkupno").innerText = netoTotal.toFixed(2);
 
     console.log("--------------------");
-    console.log(nedjelje);
-    console.log(noc);
-    console.log(subote);
+    console.log(porez);
+    console.log(typeof(porez2));
+    console.log(typeof(netoTotal));
 
 };
 
