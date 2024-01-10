@@ -10,45 +10,15 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color:rgba(198, 178, 117, 0.576);
+    font-size: 14px !important;
 }
-#content {
-    margin: 10px;
-    width: 300px;
-    padding: 1em;
-}
-.unos {
-    margin: 5px;
-    width: 250px;
-    display: flex;
-    justify-content: space-between;
-}
-input {
-    width: 50px;
-}
-#gumbZaIzracun {
-    height: 30px;
-    width: 150px;
-    margin: 10px 10px 10px 180px;
-    background-color: chocolate;
 
+.unos input, label {
+    height: 1.5em;
 }
-hr {
-    color: rgb(228, 113, 36);
-    width: 90%;
-    float: left;
-}
-span {
-    
-   
-    font-size: larger;
-}
-#prikazIzracuna {
 
-}
-p {
- 
-}
+/* #header {
+background-color: brown !important;
+} */
+

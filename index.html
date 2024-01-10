@@ -2,123 +2,220 @@
 <html lang="en">
 
 <head>
+    <title>izracunPlace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>izracunPlace</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-    <div id="content">
-        <div id="header">
-            <h1> Izračun plaće</h1>
+    <div id="content" class=" bg-light ">
+        <div id="header" class="container-fluid bg-primary mb-3 p-3 text-light">
+            <h1 class="text-center"> Projekcija plaće</h1>
         </div>
-        <div id="izracun"></div>
-       
-        <div class="unos">
-            <label for="koeficijent">Koeficijent</label>
-            <input id="koeficijent" type="number" placeholder="x.y">
-        </div>
-        <div class="unos">
-            <label for="normaSati">Norma sati</label>
-            <input id="normaSati" type="number">
-        </div>
-    
-        <div class="unos">
-            <label for="dodatakStazUKuci">Dodatak na staž u kući</label>
-            <input id="dodatakStazUKuci" type="number" placeholder="%">
-        </div>
-        <div class="unos">
-            <label for="dodatakStaz">Dodatak na staž</label>
-            <input id="dodatakStaz" type="number" placeholder="%">
-        </div>
-        <div class="unos">
-            <label for="porezNaDohodak">Porez na dohodak </label>
-            <input id="porezNaDohodak"   type="number">
-        </div>
-        <div class="unos">
-            <label for="brojDjece">Broj djece </label>
-            <input id="brojDjece" type="number" >
-        </div>
-        <hr>
-     
-        
-        <div class="unos">
-            <label for="satiSubota">Sati-subota </label>
-            <input id="satiSubota" type="number">
-        </div>
-        <div class="unos">
-            <label for="satiNedjelja">Sati-nedjelja </label>
-            <input id="satiNedjelja" type="number">
-        </div>
-        <div class="unos">
-            <label for="satiNoc">Sati-noć </label>
-            <input id="satiNoc" type="number">
-        </div>
-        <div class="unos">
-            <label for="satiPraznik">Sati-praznik </label>
-            <input id="satiPraznik" type="number" >
-        </div>
-        <div class="unos">
-            <label for="satiDvokratno">Sati-dvokratno </label>
-            <input id="satiDvokratno" type="number" >
-        </div>
-        <div class="unos">
-            <label for="satiPopodne">Sati-popodne</label>
-            <input id="satiPopodne" type="number">
-        </div>
-        <div class="unos">
-            <label for="satiPVU">Sati-PVU </label>
-            <input id="satiPVU" type="number">
-        </div>
-        <div class="unos">
-            <label for="satiAktiva">Sati-aktivno dežurstvo </label>
-            <input id="satiAktiva" type="number">
-        </div>
-        
-        <div class="unos">
-            <label for="satiPrekovremeni">Sati-prekovremeni </label>
-            <input id="satiPrekovremeni" type="number">
-        </div>
-        <div class="unos">
-            <label for="satiPasiva">Sati-pasivno dežurstvo </label>
-            <input id="satiPasiva" type="number">
-        </div>
-        <div class="unos">
-            <label for="satiVisina">Sati-rad na visini </label>
-            <input id="satiVisina" type="number">
-        </div>
-        <div class="unos">
-            <label for="satiUtovar">Sati-utovar/buka </label>
-            <input id="satiUtovar" type="number">
-        </div>
-        <div class="unos">
-            <label for="satiRat">Sati-nepogode/rat </label>
-            <input id="satiRat" type="number">
-        </div>
-        <div class="unos">
-            <label for="brojVoznji">Broj vožnji </label>
-            <input id="brojVoznji" type="number">
-        </div>
-     
-        <div class="unos">
-            <label for="stimulacijaPostotak">Stimulacija </label>
-            <input id="stimulacijaPostotak" type="number" placeholder="%">
-        </div>
-        <div class="unos">
-            <button id="gumbZaIzracun" type="button" onclick="calculate()">
-                IZRACUNAJ
-            </button>
-        </div>
-        <hr>
-        <div id="prikazIzracuna">
-            <p> Bruto sat: <span id="brutoSat"></span></p>
-            <p> Bruto ukupno: <span id="brutoUkupno"></span></p>
-            <hr>
-            <p> Zakonski propisana plaća: <span id="netoUkupno"></span></p>
+        <div class="row ">
+            <!-- <div class="col-2"></div> -->
+            <div id="left" class="container-fluid col-sm-7 p-4" style="width: 23em">
+
+                <div class="unos form-label ">
+                    <label for="koeficijent" class="w-35">Koeficijent</label>
+                    <input id="koeficijent" class=" float-end " style="width: 4em" type="number" placeholder="x.y">
+                </div>
+                <div class="unos form-label ">
+                    <label for="normaSati" class="w-35">Norma sati</label>
+                    <input id="normaSati" type="number" class="float-end" style="width: 4em">
+                </div>
+
+                <div class="unos form-label ">
+                    <label for="dodatakStazUKuci" class="w-35">Dodatak na staž u Kući</label>
+                    <input id="dodatakStazUKuci" type="number" class="float-end" style="width: 4em" placeholder="%">
+                </div>
+                <div class="unos form-label ">
+                    <label for="dodatakStaz" class="w-35">Dodatak na staž</label>
+                    <input id="dodatakStaz" type="number" class="float-end" style="width: 4em" placeholder="%">
+                </div>
+                <div class="unos form-label ">
+                    <label for="porezNaDohodak" class="w-35">Porez na dohodak </label>
+                    <input id="porezNaDohodak" class="float-end" style="width: 4em" type="number" placeholder="%">
+                </div>
+                <div class="unos form-label ">
+                    <label for="brojDjece" class="w-35">Broj djece </label>
+                    <input id="brojDjece" class="float-end" style="width: 4em" type="number">
+                </div>
+                <hr class="w-35">
+
+
+                <div class="unos form-label ">
+                    <label for="satiSubota" class="w-35">Sati-subota </label>
+                    <input id="satiSubota" class="float-end" style="width: 4em" type="number">
+                </div>
+                <div class="unos form-label ">
+                    <label for="satiNedjelja" class="w-35">Sati-nedjelja </label>
+                    <input id="satiNedjelja" class="float-end" style="width: 4em" type="number">
+                </div>
+                <div class="unos form-label ">
+                    <label for="satiNoc" class="w-35">Sati-noć </label>
+                    <input id="satiNoc" class="float-end" style="width: 4em" type="number">
+                </div>
+                <div class="unos form-label ">
+                    <label for="satiPraznik" class="w-35">Sati-praznik </label>
+                    <input id="satiPraznik" class="float-end" style="width: 4em" type="number">
+                </div>
+                <div class="unos form-label ">
+                    <label for="satiDvokratno" class="w-35">Sati-dvokratno </label>
+                    <input id="satiDvokratno" class="float-end" style="width: 4em" type="number">
+                </div>
+                <div class="unos form-label ">
+                    <label for="satiPopodne" class="w-35">Sati-popodne</label>
+                    <input id="satiPopodne" class="float-end" style="width: 4em" type="number">
+                </div>
+                <div class="unos form-label ">
+                    <label for="satiPVU" class="w-35">Sati-PVU </label>
+                    <input id="satiPVU" class="float-end" style="width: 4em" type="number">
+                </div>
+                <div class="unos form-label ">
+                    <label for="satiAktiva" class="w-35">Sati-aktivno dežurstvo </label>
+                    <input id="satiAktiva" class="float-end" style="width: 4em" type="number">
+                </div>
+
+                <div class="unos form-label ">
+                    <label for="satiPrekovremeni" class="w-35">Sati-prekovremeni </label>
+                    <input id="satiPrekovremeni" class="float-end" style="width: 4em" type="number">
+                </div>
+                <div class="unos form-label">
+                    <label for="satiPasiva" class="w-35">Sati-pasivno dežurstvo </label>
+                    <input id="satiPasiva" class="float-end" style="width: 4em" type="number">
+                </div>
+                <div class="unos form-label ">
+                    <label for="satiVisina" class="w-35">Sati-rad na visini </label>
+                    <input id="satiVisina" class="float-end" style="width: 4em" type="number">
+                </div>
+                <div class="unos form-label ">
+                    <label for="satiUtovar" class="w-35">Sati-utovar/buka </label>
+                    <input id="satiUtovar" class="float-end" style="width: 4em" type="number">
+                </div>
+                <div class="unos form-label ">
+                    <label for="satiRat" class="w-35">Sati-nepogode/rat </label>
+                    <input id="satiRat" class="float-end" style="width: 4em" type="number">
+                </div>
+                <div class="unos form-label ">
+                    <label for="brojVoznji" class="w-35">Broj vožnji </label>
+                    <input id="brojVoznji" class="float-end" style="width: 4em" type="number">
+                </div>
+
+                <div class="unos form-label ">
+                    <label for="stimulacijaPostotak" class="w-35">Stimulacija </label>
+                    <input id="stimulacijaPostotak" class="float-end" style="width: 4em" type="number" placeholder="%">
+                </div>
+                <div class="unos form-label ">
+                    <button id="gumbZaIzracun" class="p-2 my-2 bg-warning" type="button" onclick="calculate()">
+                        IZRACUNAJ
+                    </button>
+                </div>
+                <hr>
+                <div id="prikazIzracuna">
+                    <p class="h4 p-2"> Bruto sat: <span id="brutoSat" class="float-end mr-1"></span></p>
+                    <p class="h4 p-2"> Bruto ukupno: <span id="brutoUkupno" class="float-end mr-1"></span></p>
+                    <hr>
+                    <p class="h4 p-2"> Propisana neto plaća: <span id="netoUkupno" class="float-end mr-1"></span></p>
+                </div>
+            </div>
+
+            <div id="right" class="container-fluid col-sm-5 p-1 mt-3">
+                <div class="accordion pr-5">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="sto">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse1" aria-expanded="true" aria-controls="sto">
+                                Što
+                            </button>
+                        </h2>
+
+                        <div id="collapse1" class="accordion-collapse collapse " aria-labelledby="sto"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Ovo je kalkulator za izračun plaće.</p>
+                                <p>Pristup stranici je anoniman, podaci se ne spremaju te nakon korištenja ne ostaju
+                                    nikakvi tragovi. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="zasto">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse2" aria-expanded="true" aria-controls="zasto">
+                                Zašto
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="zasto"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>
+                                    Ideja stranice je da svakome omogući uvid koliko se mijenja vrijednost bruto sata u
+                                    odnosu na mjesečnu normu, koliko prekovremenih (ili drugih dodataka) treba odraditi
+                                    da bi se dobila željena plaća,
+                                    kolika bi mogla biti plaća ako bi došao
+                                    određeni koeficijent, itd...
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="kako">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse3" aria-expanded="true" aria-controls="kako">
+                                Kako
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse " aria-labelledby="kako"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>
+                                    U kućice je potrebno unijeti željene vrijednosti.
+                                </p>
+                                <p><strong>Kod decimalnih brojeva obavezno koristiti točku.</strong></p>
+                                <p>
+                                    U slučaju godišnjeg odmora, približni izračun moguć je tako da se broj sati
+                                    godišnjeg nadoda popodnevnim satima.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="tko">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse4" aria-expanded="true" aria-controls="tko">
+                                Tko
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse " aria-labelledby="heading4"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Svi upiti i komentari dobrodošli su na:
+                                    <br>
+                                    info@projekcija.eu
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
         </div>
     </div>
     <script src="jscript.js"> </script>
 </body>
+
 </html>

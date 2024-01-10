@@ -77,7 +77,7 @@ function calculate() {
     const mirovinskiDrugi = brutoTotal * 0.05;
     const dohodak = brutoTotal - mirovinskiPrvi - mirovinskiDrugi;
     const poreznaOsnovica = dohodak - poreznaOlaksica - ukupniOsobniOdbitak;
-    const porez = poreznaOsnovica * porez2 / 100;
+    var porez = poreznaOsnovica * porez2 / 100;
     
 
     if (poreznaOsnovica < 0) {
