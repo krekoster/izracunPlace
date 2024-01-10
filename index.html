@@ -12,13 +12,13 @@
 </head>
 
 <body>
-    <div id="content" class=" bg-light ">
+    <div id="content" class=" bg-light pb-10 " >
         <div id="header" class="container-fluid bg-primary mb-3 p-3 text-light">
             <h1 class="text-center"> Projekcija plaće</h1>
         </div>
         <div class="row ">
             <!-- <div class="col-2"></div> -->
-            <div id="left" class="container-fluid col-sm-7 p-4" style="width: 23em">
+            <div id="left" class="container-fluid col-sm-5 p-4" style="width: 23em">
 
                 <div class="unos form-label ">
                     <label for="koeficijent" class="w-35">Koeficijent</label>
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="unos form-label ">
-                    <label for="dodatakStazUKuci" class="w-35">Dodatak na staž u Kući</label>
+                    <label for="dodatakStazUKuci" class="w-35">Dodatak na staž u tvrtki</label>
                     <input id="dodatakStazUKuci" type="number" class="float-end" style="width: 4em" placeholder="%">
                 </div>
                 <div class="unos form-label ">
@@ -110,21 +110,37 @@
                     <label for="stimulacijaPostotak" class="w-35">Stimulacija </label>
                     <input id="stimulacijaPostotak" class="float-end" style="width: 4em" type="number" placeholder="%">
                 </div>
+
+
+
+            </div>
+
+            <div id="mid" class="container-fluid col-sm-4 p-1 m-2">
                 <div class="unos form-label ">
-                    <button id="gumbZaIzracun" class="p-2 my-2 bg-warning" type="button" onclick="calculate()">
+                    <button id="gumbZaIzracun" class="p-2 my-3 bg-warning pl-4 m-2" type="button" onclick="calculate()">
                         IZRACUNAJ
                     </button>
                 </div>
-                <hr>
                 <div id="prikazIzracuna">
-                    <p class="h4 p-2"> Bruto sat: <span id="brutoSat" class="float-end mr-1"></span></p>
-                    <p class="h4 p-2"> Bruto ukupno: <span id="brutoUkupno" class="float-end mr-1"></span></p>
-                    <hr>
-                    <p class="h4 p-2"> Propisana neto plaća: <span id="netoUkupno" class="float-end mr-1"></span></p>
+                    <p class="h4 p-2"> Bruto sat: <span id="brutoSat" class="float-end mr-1" > </span>  </p>
+                    <p class="h4 p-2 "> Bruto ukupno: <span id="brutoUkupno" class="float-end mr-1 "></span>  </p>
+                    <hr class="w-75 mt-3">
+                    <p class="h4 p-2"> Zakonski propisana plaća: <span id="netoUkupno" class="float-end mr-1">  </span>
+                    </p>
+                    <hr class="w-75">
                 </div>
+                <div id="podaci" class=" h6 p-2 ">
+                    <p class="mt-2">
+                        Osnovica = 197,81 &euro;
+                    </p>
+                    <p>
+                        Prosječna bruto plaća tvrtke = 1556 &euro;
+                    </p>
+                </div>
+
             </div>
 
-            <div id="right" class="container-fluid col-sm-5 p-1 mt-3">
+            <div id="right" class="container-fluid col-sm-3 p-1 mt-3">
                 <div class="accordion pr-5">
 
                     <div class="accordion-item">
@@ -178,7 +194,7 @@
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <p>
-                                    U kućice je potrebno unijeti željene vrijednosti.
+                                    U rubrike je potrebno unijeti željene vrijednosti.
                                 </p>
                                 <p><strong>Kod decimalnih brojeva obavezno koristiti točku.</strong></p>
                                 <p>
@@ -201,6 +217,7 @@
                             <div class="accordion-body">
                                 <p>Svi upiti i komentari dobrodošli su na:
                                     <br>
+                                    <br>
                                     info@projekcija.eu
                                 </p>
                             </div>
@@ -208,9 +225,7 @@
                     </div>
 
                 </div>
-                <div id="dummy" class="mb-6 p-1">
-                    <hr>
-                </div>
+                <div id="dummy" class="mb-6"></div>
 
 
 

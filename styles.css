@@ -10,9 +10,9 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-body {
+/* body {
     font-size: 14px !important;
-}
+} */
 
 .unos input, label {
     height: 1.5em;
@@ -22,3 +22,6 @@ body {
 background-color: brown !important;
 } */
 
+#content {
+  height: 100vh;
+}
