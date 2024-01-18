@@ -2,18 +2,17 @@
 
 function calculate() {
 
-    const osnovica = 197.81;
+   
     const sluzbenaVoznja = 6.64;
     const poreznaOlaksica = 560;
     const osobniOdbitak = 560;
     const prosjecnaBrutoPlacaKuce = 1566.3;
+
+    const osnovica = document.getElementById("osnovica").value;
     const koeficijent = document.getElementById("koeficijent").value;
-    const porez2 = document.getElementById("porezNaDohodak").value / 1;
-    
-    const brojDjece = document.getElementById("brojDjece").value / 1;
-
-
     const norma = document.getElementById("normaSati").value;
+    const porez2 = document.getElementById("porezNaDohodak").value / 1;
+    const brojDjece = document.getElementById("brojDjece").value / 1;
 
     const postotakStazHrt = document.getElementById("dodatakStazUKuci").value;
     const postotakStaz = document.getElementById("dodatakStaz").value;
@@ -24,7 +23,13 @@ function calculate() {
     const subote = document.getElementById("satiSubota").value * osnovniSat * 0.15;
     const nedjelje = document.getElementById("satiNedjelja").value * osnovniSat * 0.5;
     const praznik = document.getElementById("satiPraznik").value * osnovniSat * 1.45;
-    const popodne = document.getElementById("satiPopodne").value * osnovniSat * 0.07;
+    // var popodne = document.getElementById("satiPopodne").value;
+    if (osnovica === 183.16) {
+        var popodne =  document.getElementById("satiPopodne").value * osnovniSat * 0.15;
+    }
+    else {
+        var popodne =  document.getElementById("satiPopodne").value * osnovniSat * 0.07;
+    }
     const dvokratno = document.getElementById("satiDvokratno").value * osnovniSat * 0.1;
     const noc = document.getElementById("satiNoc").value * osnovniSat * 0.35;
     const prekovremeni = document.getElementById("satiPrekovremeni").value * osnovniSat * 1.45;
@@ -37,7 +42,10 @@ function calculate() {
     const voznja = document.getElementById("brojVoznji").value * sluzbenaVoznja;
     const stimulacijaPosto = document.getElementById("stimulacijaPostotak").value / 100;
 
-    const brutoDodaci = subote + nedjelje + praznik + popodne + dvokratno + noc + prekovremeni
+ 
+
+
+    let brutoDodaci = subote + nedjelje + praznik + popodne + dvokratno + noc + prekovremeni
         + pvu + utovar + pasiva + aktiva + visina + rat;
 
     const dodatakNaStazHrt = postotakStazHrt * prosjecnaBrutoPlacaKuce / 100;
@@ -78,7 +86,7 @@ function calculate() {
     const dohodak = brutoTotal - mirovinskiPrvi - mirovinskiDrugi;
     const poreznaOsnovica = dohodak - poreznaOlaksica - ukupniOsobniOdbitak;
     var porez = poreznaOsnovica * porez2 / 100;
-    
+
 
     if (poreznaOsnovica < 0) {
         porez = 0;
@@ -93,12 +101,18 @@ function calculate() {
 
     document.getElementById("brutoSat").innerText = osnovniSat.toFixed(2);
     document.getElementById("brutoUkupno").innerText = brutoTotal.toFixed(2);
+    
+    document.getElementById("brutoOsnovno").innerText = brutoOsnova.toFixed(2);
+    document.getElementById("brutoStaz").innerText = (dodatakNaStaz + dodatakNaStazHrt).toFixed(2);
+    document.getElementById("brutoDodaci").innerText = brutoDodaci.toFixed(2);
+
+
     document.getElementById("netoUkupno").innerText = netoTotal.toFixed(2);
 
     console.log("--------------------");
     console.log(porez);
-    console.log(typeof(porez2));
-    console.log(typeof(netoTotal));
+    console.log(popodne);
+    console.log(typeof (netoTotal));
 
 };
 
