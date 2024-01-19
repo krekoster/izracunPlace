@@ -13,6 +13,7 @@ function calculate() {
     const norma = document.getElementById("normaSati").value;
     const porez2 = document.getElementById("porezNaDohodak").value / 1;
     const brojDjece = document.getElementById("brojDjece").value / 1;
+    
 
     const postotakStazHrt = document.getElementById("dodatakStazUKuci").value;
     const postotakStaz = document.getElementById("dodatakStaz").value;
@@ -20,6 +21,8 @@ function calculate() {
     const brutoOsnova = osnovica * koeficijent;
     const osnovniSat = brutoOsnova / norma;
 
+
+    const godisnji = document.getElementById("satiGodisnjeg").value * osnovniSat * 0.07;
     const subote = document.getElementById("satiSubota").value * osnovniSat * 0.15;
     const nedjelje = document.getElementById("satiNedjelja").value * osnovniSat * 0.5;
     const praznik = document.getElementById("satiPraznik").value * osnovniSat * 1.45;
@@ -51,7 +54,7 @@ function calculate() {
     const dodatakNaStazHrt = postotakStazHrt * prosjecnaBrutoPlacaKuce / 100;
     const dodatakNaStaz = postotakStaz * brutoOsnova / 100;
 
-    const brutoTotal = brutoOsnova + brutoDodaci + dodatakNaStazHrt + dodatakNaStaz + voznja
+    const brutoTotal = brutoOsnova + godisnji + brutoDodaci + dodatakNaStazHrt + dodatakNaStaz + voznja
         + stimulacijaPosto * brutoOsnova;
 
     // doprinosi i porezi
@@ -102,16 +105,16 @@ function calculate() {
     document.getElementById("brutoSat").innerText = osnovniSat.toFixed(2);
     document.getElementById("brutoUkupno").innerText = brutoTotal.toFixed(2);
     
-    document.getElementById("brutoOsnovno").innerText = brutoOsnova.toFixed(2);
+    document.getElementById("brutoOsnovno").innerText = (brutoOsnova + godisnji).toFixed(2);
     document.getElementById("brutoStaz").innerText = (dodatakNaStaz + dodatakNaStazHrt).toFixed(2);
-    document.getElementById("brutoDodaci").innerText = brutoDodaci.toFixed(2);
+    document.getElementById("brutoDodaci").innerText = (brutoDodaci + voznja ).toFixed(2);
 
 
     document.getElementById("netoUkupno").innerText = netoTotal.toFixed(2);
 
     console.log("--------------------");
     console.log(porez);
-    console.log(popodne);
+    console.log((godisnji/(document.getElementById("satiGodisnjeg").value)+osnovniSat));
     console.log(typeof (netoTotal));
 
 };
